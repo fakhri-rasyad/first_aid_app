@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'P3K',
-      home: MainPage(),
+      home: const MainPage(),
       theme: ThemeData(primarySwatch: Colors.amber),
     );
   }
@@ -29,7 +29,11 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List _pertolonganPertama = [];
+  List _filtered = [];
   bool _isInput = true;
+  String userInput = '';
+  late TextEditingController _searchController;
+
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString('content/pertolongan_pertama.json');
@@ -42,6 +46,7 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
+    _searchController = TextEditingController();
     readJson();
   }
 
@@ -62,20 +67,31 @@ class _MainPageState extends State<MainPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _isInput
-                        ? Text('No Input')
-                        : TextField(
-                            decoration: InputDecoration(
-                              hintText: 'Cari Pertolongan Pertama',
-                            ),
-                          ),
+                    SizedBox(
+                      width: 240,
+                      child: TextField(
+                        onChanged: (value) => setState(() {
+                          userInput = value;
+                          _filtered = _pertolonganPertama
+                              .where((element) => (element["judul"]
+                                  .toString()
+                                  .toLowerCase()
+                                  .contains(userInput.toLowerCase())))
+                              .toList();
+                        }),
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          hintText: 'Cari Pertolongan Pertama',
+                        ),
+                      ),
+                    ),
                     IconButton(
                         onPressed: () {
                           setState(() {
                             _isInput = !_isInput;
                           });
                         },
-                        icon: Icon(Icons.search))
+                        icon: Icon(Icons.search)),
                   ],
                 ),
               ),
@@ -83,19 +99,19 @@ class _MainPageState extends State<MainPage> {
                 child: GridView.count(
                   crossAxisCount: 2,
                   shrinkWrap: true,
-                  children: List.generate(_pertolonganPertama.length, (index) {
+                  children: List.generate(_filtered.length, (index) {
                     return Card(
                       child: Column(
                         textDirection: TextDirection.ltr,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Image.asset(
-                            _pertolonganPertama[index]["gambar"],
+                            _filtered[index]["gambar"],
                             width: 180,
                             height: 90,
                           ),
                           Text(
-                            _pertolonganPertama[index]["judul"],
+                            _filtered[index]["judul"],
                             style: TextStyle(
                               fontSize: 16.0,
                             ),
