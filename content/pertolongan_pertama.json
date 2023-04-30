@@ -1,0 +1,60 @@
+[
+      {
+        "judul": "CPR",
+        "gambar": "content/image/CPR.jpg",
+        "deskripsi": "CPR adalah teknik penyelamatan nyawa yang digunakan ketika seseorang berhenti bernafas atau detak jantungnya berhenti. Ini melibatkan kompresi dada dan nafas penyelamatan untuk menjaga aliran darah dan oksigenasi.",
+        "langkah": [
+          "Panggil layanan darurat",
+          "Posisikan orang tersebut di punggungnya",
+          "Buka saluran napas dan periksa napas",
+          "Mulai kompresi dada",
+          "Berikan nafas penyelamatan"
+        ]
+      },
+      {
+        "judul": "Luka Bakar",
+        "gambar": "content/image/Burn.jpg",
+        "deskripsi": "Luka bakar adalah luka yang disebabkan oleh panas, listrik, bahan kimia, atau radiasi. Pertolongan pertama untuk luka bakar meliputi pendinginan area yang terkena dan menutupinya dengan perban steril.",
+        "langkah": [
+          "Hilangkan sumber luka bakar",
+          "Dinginkan luka dengan air dingin mengalir selama minimal 10 menit",
+          "Tutup luka dengan perban steril atau kain bersih",
+          "Cari pertolongan medis jika diperlukan"
+        ]
+      },
+      {
+        "judul": "Patah Tulang",
+        "gambar": "content/image/BrokenBones.jpg",
+        "deskripsi": "Patah tulang adalah tulang yang patah. Pertolongan pertama untuk patah tulang meliputi memobilisasi area yang terkena untuk mencegah cedera lebih lanjut.",
+        "langkah": [
+          "Panggil layanan darurat",
+          "Dukung area yang terkena dengan splint",
+          "Mobilisasi area yang terkena",
+          "Terapkan es jika terdapat pembengkakan",
+          "Cari pertolongan medis jika diperlukan"
+        ]
+      },
+      {
+        "judul": "Pendarahan",
+        "gambar": "content/image/Bleeding.jpg",
+        "deskripsi": "Pendarahan adalah kehilangan darah dari pembuluh darah di dalam tubuh. Pertolongan pertama untuk pendarahan meliputi menekan area yang berdarah dan menutupinya dengan kain bersih.",
+        "langkah": [
+          "Tekan area yang berdarah dengan kain bersih atau bantalan tekanan",
+          "Angkat bagian tubuh yang terkena jika memungkinkan",
+          "Cari pertolongan medis jika diperlukan"
+        ]
+      },
+      {
+        "judul": "Gigitan Hewan",
+        "gambar": "content/image/AnimalBite.jpg",
+        "deskripsi": "Gigitan hewan dapat menyebabkan luka dan infeksi. Pertolongan pertama untuk gigitan hewan meliputi membersihkan luka dan mencari perawatan medis.",
+        "langkah": [
+          "Cuci luka dengan sabun dan air hangat selama minimal 5 menit.",
+          "Tutup luka dengan perban bersih dan kering.",
+          "Tekan luka untuk menghentikan perdarahan, jika perlu.",
+          "Cari perawatan medis, terutama jika hewan yang menggigit adalah liar atau jika luka dalam atau besar.",
+          "Jika mungkin, cobalah mengidentifikasi hewan yang menggigit Anda."
+        ]
+      }
+    ]
+  
