@@ -29,6 +29,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List _pertolonganPertama = [];
+  bool _isInput = true;
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString('content/pertolongan_pertama.json');
@@ -58,10 +59,24 @@ class _MainPageState extends State<MainPage> {
             children: [
               Container(
                 margin: EdgeInsets.only(bottom: 24.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Cari Pertolongan Pertama',
-                      icon: Icon(Icons.search)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _isInput
+                        ? Text('No Input')
+                        : TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Cari Pertolongan Pertama',
+                            ),
+                          ),
+                    IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _isInput = !_isInput;
+                          });
+                        },
+                        icon: Icon(Icons.search))
+                  ],
                 ),
               ),
               Expanded(
